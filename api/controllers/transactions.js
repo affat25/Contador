@@ -1,5 +1,3 @@
-import { v4 as uuid } from 'uuid';
-
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
