@@ -1,1 +1,12 @@
 /* Add custom CSS here */
+* {
+  font-family: "Alexandria", sans-serif;
+}
+
+.orange-bg {
+  background-color: #fe802f;
+}
+
+.blue-txt:hover {
+  color: #0052ff;
+}
