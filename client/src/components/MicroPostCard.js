@@ -7,12 +7,12 @@ function MicroPostCard({ content, createdAt, id }) {
     <div className="col-10 col-md-8 col-lg-7">
       <div className="d-flex card">
         <div className="me-auto p-2 card-body card-text">
-          <Link to={"/posts/" + id}>{content}</Link>
+          <Link to={"/account/" + id}>{content}</Link>
         </div>
         <div>{total}</div>
-        <div className="card-footer small text-muted text-end">
+        {/* <div className="card-footer small text-muted text-end">
           {createdAt.slice(0, -14)}
-        </div>
+        </div> */}
       </div>
     </div>
   );
