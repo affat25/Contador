@@ -34,8 +34,27 @@ function SignUpPage(props) {
           </div>
 
           {/* vvvvvvvvv */}
+          <div className="col-md-6 ">
+            <label for="genderIdentity" className="form-label">
+              Gender Identity *
+            </label>
+            <input className="form-control bi bi-caret-down-fill text-end" list="datalistOptions" id="genderIdentity" placeholder="Please Select   ">
+              {/**Trying to use bootstrap icon for a caret here using bi-caret but it isnt rendering */}
+            </input>
+            <datalist id="datalistOptions">
+              <option value="Agender"></option>
+              <option value="Genderfluid"></option>
+              <option value="Gender non-conforming"></option>
+              <option value="Genderqueer"></option>
+              <option value="Man"></option>
+              <option value="Non-binary"></option>
+              <option value="Woman"></option>
+              <option value="Not Listed"></option>
+              <option value="I choose to not disclose"></option>
+            </datalist>
+          </div>
 
-          <div className="col-md-6 dropdown">
+          {/* <div className="col-md-6 dropdown">
             <label for="genderIdentity" className="form-label">
               Gender Identity *
             </label>
@@ -51,18 +70,16 @@ function SignUpPage(props) {
               </li>
               <li>
                 <a className="dropdown-item" href="/">
-                  Another
-                </a>{" "}
-                action
+                  Another action
+                </a>
               </li>
               <li>
                 <a className="dropdown-item" href="/">
-                  Something
-                </a>{" "}
-                else here
+                  Something else here
+                </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* ^^^^^^^^^ */}
 
@@ -70,7 +87,7 @@ function SignUpPage(props) {
             <label for="monthlyIncome" className="form-label">
               Monthly Income *
             </label>
-            <input type="text" className="form-control" id="monthlyIncome" required></input>
+            <input type="number" className="form-control" id="monthlyIncome" required></input>
           </div>
           <div className="col-md-12">
             <label for="comments" className="form-label">
