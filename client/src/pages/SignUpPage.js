@@ -40,6 +40,7 @@ function SignUpPage(props) {
             </label>
             <input className="form-control bi bi-caret-down-fill text-end" list="datalistOptions" id="genderIdentity" placeholder="Please Select   ">
               {/**Trying to use bootstrap icon for a caret here using bi-caret but it isnt rendering */}
+              {/* Do we want to allow user input? */}
             </input>
             <datalist id="datalistOptions">
               <option value="Agender"></option>
