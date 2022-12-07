@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import MicroPostCard from "../components/MicroPostCard";
+import AddTransaction from "../components/AddTransaction";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ErrorAlert from "../components/ErrorAlert";
 
 function PostsListPage() {
   const [posts, setPosts] = useState([]);
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -13,6 +15,8 @@ function PostsListPage() {
       setLoading(true);
       try {
         let response = await fetch("/api/micro_posts");
+        // let transaction = await fetch("api/transaction_history");
+        // let sumTotal = await.response.json();
         let allPosts = await response.json();
         setPosts(allPosts);
         setLoading(false);
@@ -34,11 +38,11 @@ function PostsListPage() {
 
   return (
     <>
-      {/* <div className="container mt-3">
-        <AddTransaction />
-      </div> */}
+      <div>
+        <div className="container mt-2 mb-2 float-left">
+          <AddTransaction />
+        </div>
 
-      <div className="container-fluid text-center">
         <div className="row justify-content-center">
           {posts.map((entryData) => (
             <MicroPostCard {...entryData} key={entryData.id} />
@@ -50,19 +54,3 @@ function PostsListPage() {
 }
 
 export default PostsListPage;
-
-/**  From Affat
- *     <>
-      <div>
-        <div className="container mt-3">
-          <AddTransaction />
-        </div>
-
-        <div className="row justify-content-center">
-          {posts.map((entryData) => (
-            <MicroPostCard {...entryData} key={entryData.id} />
-          ))}
-        </div>
-      </div>
-    </>
- */
