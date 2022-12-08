@@ -3,7 +3,9 @@ import MicroPostCard from "../components/MicroPostCard";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ErrorAlert from "../components/ErrorAlert";
 import AddCategory from "../components/AddCategory";
-
+import MonthlyIncome from "../components/MonthleyIncome";
+import Target from "../components/Target";
+import BalanceForward from "../components/BalanceForward";
 
 
 function PostsListPage() {
@@ -44,12 +46,13 @@ function PostsListPage() {
       <AddCategory/> 
       </div>
       <div className="row justify-content-center" style={{"width":"600px"}}>
+      <MonthlyIncome/>
         {posts.map((entryData) => (
           <MicroPostCard {...entryData} key={entryData.id} />
         ))}
         <div className="d-flex flex-row justify-content-end">
-          <h4 className="p-2 border rounded text-muted">Target</h4>
-          <h4 className="p-2 border rounded text-muted">Balance Forward</h4>
+          <Target/>
+          <BalanceForward/>
         </div>
       </div>
     </div>
