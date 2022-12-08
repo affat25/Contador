@@ -1,3 +1,4 @@
+import AddTransaction from "../components/AddTransaction";
 import React, { useState, useEffect } from "react";
 import TransactionPostCard from "../components/TransactionPostCard";
 import LoadingSpinner from "../components/LoadingSpinner";
@@ -37,7 +38,9 @@ function ShowPostPage() {
 
   return (
     <>
-      <h1>item names should be here</h1>
+      <div className="container mt-2 mb-2 float-left">
+        <AddTransaction />
+      </div>
       <div className="row justify-content-center">
         {transactions.map((entryData) => (
           <TransactionPostCard {...entryData} key={entryData.id} />

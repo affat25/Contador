@@ -12,23 +12,23 @@ function Navigation(props) {
   return (
     // navbar-dark bg-dark
     <nav className="navbar navbar-expand-sm aa-orange-bg navbar-dark shadow mb-3">
-      <div className="container-fluid">
-        <Link className="navbar-brand aa-blue-txt" to="/">
+      <div className="container-fluid col-10">
+        <Link className="navbar-brand aa-blue-txt " to="/">
           Contador
         </Link>
         <ul className="navbar-nav me-auto">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/posts/new">
+            <NavLink className="nav-link mx-1" to="/posts/new">
               Create a category
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/about-us">
+            <NavLink className="nav-link mx-1" to="/about-us">
               About Us
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/form">
+            <NavLink className="nav-link mx-1" to="/form">
               Fill-out Form
             </NavLink>
           </li>
