@@ -1,0 +1,27 @@
+/* Tooltip container */
+.balanceforward {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip text */
+  .balanceforward .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #fe802f;; 
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 6px;
+    /* Position the tooltip text*/
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-left: -100px;
+
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .balanceforward:hover .tooltiptext {
+    visibility: visible;
+  }

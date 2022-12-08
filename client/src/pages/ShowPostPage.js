@@ -45,7 +45,7 @@ function ShowPostPage() {
       <div className="row justify-content-center" style={{"width":"600px"}}>
       <TransactionCard {...post} />
       <div className="d-flex flex-row justify-content-end">
-          <h4 className="p-2 border rounded text-muted">Total</h4>
+          <h4 className="p-2 border rounded text-white bg-info">Total</h4>
         </div>
       </div>
     </div>
