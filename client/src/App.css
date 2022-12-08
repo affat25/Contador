@@ -1,12 +1,16 @@
 /* Add custom CSS here */
-* {
-  font-family: "Alexandria", sans-serif;
+body {
+  font-family: "Crimson Text", serif;
 }
 
-.orange-bg {
+.aa-orange-bg {
   background-color: #fe802f;
 }
 
-.blue-txt:hover {
+.aa-blue-txt:hover {
   color: #0052ff;
+}
+
+.aa-about-us {
+  font-family: "Dancing Script", cursive;
 }

@@ -5,7 +5,7 @@ import ErrorAlert from "../components/ErrorAlert";
 import { useParams } from "react-router-dom";
 
 function ShowPostPage() {
-  const [post, setPost] = useState(null);
+  const [transactions, setTransactions] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   let params = useParams();
@@ -15,9 +15,9 @@ function ShowPostPage() {
       setLoading(true);
       try {
         let response = await fetch("/api/transaction/" + params.id);
-        let postData = await response.json();
+        let transactionsData = await response.json();
 
-        setPost(postData);
+        setTransactions(transactionsData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching /api/transaction/" + params.id, error);
@@ -38,9 +38,16 @@ function ShowPostPage() {
   return (
     <>
       <h1>item names should be here</h1>
-      <TransactionPostCard {...post} />
+      <div className="row justify-content-center">
+        {transactions.map((entryData) => (
+          <TransactionPostCard {...entryData} key={entryData.id} />
+        ))}
+      </div>
+
+      {/* <TransactionPostCard {...transactions} /> */}
     </>
   );
 }
 
 export default ShowPostPage;
+// ShowTransactionsPage

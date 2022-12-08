@@ -11,9 +11,9 @@ import "./App.css";
 function Navigation(props) {
   return (
     // navbar-dark bg-dark
-    <nav className="navbar navbar-expand-sm orange-bg navbar-dark shadow mb-3">
+    <nav className="navbar navbar-expand-sm aa-orange-bg navbar-dark shadow mb-3">
       <div className="container-fluid">
-        <Link className="navbar-brand blue-txt" to="/">
+        <Link className="navbar-brand aa-blue-txt" to="/">
           Contador
         </Link>
         <ul className="navbar-nav me-auto">
