@@ -1,6 +1,9 @@
 import React, { useState }  from "react";
 import {Modal, Button, ModalBody, ModalTitle, ModalHeader, Form, ModalFooter, FormGroup, FormControl, Row} from "react-bootstrap";
 import ErrorAlert from "./ErrorAlert";
+import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import{faPenToSquare} from '@fortawesome/free-solid-svg-icons';
+
 
 function AddCategory() {
     const [content, setContent] = useState("");
@@ -47,9 +50,13 @@ function AddCategory() {
 
     return(
       <div>
-      <Button variant="primary" onClick={initModal}>
-        Add Category
-      </Button>
+      <FontAwesomeIcon
+            icon={faPenToSquare}
+            onClick={initModal}
+            style={{"color":"blue","size":"20px"}}
+            type="button"
+            size="2x"
+            />
       <Modal show={isShow}>
         <ModalHeader closeButton onClick={initModal}>
           <ModalTitle>Enter Category Name</ModalTitle>

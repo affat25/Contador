@@ -1,26 +1,33 @@
 import React, { useState }  from "react";
 import {Modal, Button, ModalBody, ModalTitle, ModalHeader, Form, ModalFooter, FormCheck, FormGroup, FormControl, Row} from "react-bootstrap";
 import ErrorAlert from "../components/ErrorAlert";
+import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import{faMoneyBillTransfer} from '@fortawesome/free-solid-svg-icons';
 
 function AddTransaction() {
-    const [content, setContent] = useState("");
+    const [itemName, setContent] = useState("");
+    const[price,setPrice] = useState(0);
     const [error, setError] = useState(false);
     const [isShow,invokeModal]= useState(false);
     
     const handleContentChange = (event) => {
       setContent(event.target.value);
     };
+    const handlePriceChange = (event) => {
+      setPrice(event.target.value);
+    };
 
     const handleSubmit = async (event) => {
       try {
-        let response = await fetch("/api/micro_posts", {
+        let response = await fetch("/api/transaction", {
           method: "POST",
           credentials: "include",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            content: content,
+            itemName: itemName,
+            price: price,
           }),
         });
   
@@ -47,9 +54,13 @@ function AddTransaction() {
 
     return(
       <div>
-      <Button variant="primary" onClick={initModal}>
-        Add Transaction
-      </Button>
+      <FontAwesomeIcon
+            icon={faMoneyBillTransfer}
+            onClick={initModal}
+            style={{"color":"green","size":"20px"}}
+            type="button"
+            size="2x"
+            />
       <Modal show={isShow}>
         <ModalHeader closeButton onClick={initModal}>
           <ModalTitle>Enter Transaction Details</ModalTitle>
@@ -57,10 +68,10 @@ function AddTransaction() {
         <ModalBody>
           <Form>
             <FormGroup className="mb-3" controlId="formTransaction">
-              <FormControl type="text" placeholder="Name" value={content} onChange={handleContentChange}/>
+              <FormControl type="text" placeholder="Name" value={itemName} onChange={handleContentChange}/>
             </FormGroup>
             <FormGroup className="mb-3" controlId="formAmount">
-              <FormControl type="number" placeholder="Amount"/>
+              <FormControl type="number" placeholder="Amount" value={price} onChange={handlePriceChange}/>
             </FormGroup>
             <Row>
             <FormGroup>

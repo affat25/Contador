@@ -40,7 +40,7 @@ function PostsListPage() {
     <>
     
     <div className="container-fluid text-center">
-      <div className="float-end mb-3">
+      <div className="mb-3">
       <AddCategory/> 
       </div>
       <div className="row justify-content-center" style={{"width":"600px"}}>

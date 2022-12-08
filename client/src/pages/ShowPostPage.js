@@ -39,14 +39,14 @@ function ShowPostPage() {
 
   return (
     <div className="container-fluid text-center">
+      <div className="mb-3">
+        <AddTransaction/>
+      </div>
       <div className="row justify-content-center" style={{"width":"600px"}}>
       <TransactionCard {...post} />
       <div className="d-flex flex-row justify-content-end">
           <h4 className="p-2 border rounded text-muted">Total</h4>
         </div>
-      </div>
-      <div className="float-end mb-3">
-        <AddTransaction/>
       </div>
     </div>
   );
