@@ -41,7 +41,7 @@ function PostsListPage() {
     
     <div className="container-fluid text-center">
       <div className="float-end mb-3">
-      <AddCategory/>
+      <AddCategory/> 
       </div>
       <div className="row justify-content-center" style={{"width":"600px"}}>
         {posts.map((entryData) => (
