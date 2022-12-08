@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Button, ModalBody, ModalTitle, ModalHeader, Form, ModalFooter, FormCheck, FormGroup, FormControl, Row, Col, Dropdown, DropdownButton } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 function AddTransaction() {
-  const [isShow, invokeModal] = React.useState(false);
+  const [isShow, invokeModal] = useState(false);
+  const [data, collectData] = useState([]);
+  let params = useParams();
+
   const initModal = () => {
     return invokeModal(!isShow);
   };
@@ -19,21 +23,22 @@ function AddTransaction() {
 
         <ModalBody>
           <Form>
-            <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-              {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
-            </DropdownButton>
+            {/* This should be pre-filled with the category name and immutable*/}
             <FormGroup className="mb-3" controlId="formTransaction">
               <FormControl type="text" placeholder="Category" />
             </FormGroup>
+
+            {/* We need to somehow capture MicroPostId */}
+            {/* params.id ?*/}
+
+            {/* itemName */}
             <FormGroup className="mb-3" controlId="formTransaction">
               <FormControl type="text" placeholder="Item name" />
             </FormGroup>
+            {/* price */}
             <FormGroup className="mb-3" controlId="formAmount">
-              <FormControl type="number" placeholder="Cost" />
+              <FormControl type="number" placeholder="Price" />
             </FormGroup>
-
             <Row>
               <FormGroup as={Col}>
                 <FormCheck type="checkbox" label="Recurrent" />
