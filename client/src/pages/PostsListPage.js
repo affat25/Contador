@@ -38,7 +38,7 @@ function PostsListPage() {
   return (
     <>
       <div>
-        <div className="row justify-content-center ">
+        <div className="row justify-content-center">
           {posts.map((entryData) => (
             <MicroPostCard {...entryData} key={entryData.id} />
           ))}

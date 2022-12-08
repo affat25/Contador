@@ -18,7 +18,7 @@ function AboutUsPage(props) {
             <div class="container align-items-start">
               <div class="col-md ">
                 <div>
-                  <img className="rounded" src="Spaghetti.png" alt="Spaghetti"></img>
+                  <img src="Spaghetti.png" alt="Spaghetti"></img>
                 </div>
               </div>
             </div>

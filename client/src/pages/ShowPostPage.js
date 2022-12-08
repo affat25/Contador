@@ -46,8 +46,6 @@ function ShowPostPage() {
           <TransactionPostCard {...entryData} key={entryData.id} />
         ))}
       </div>
-
-      {/* <TransactionPostCard {...transactions} /> */}
     </>
   );
 }
