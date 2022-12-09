@@ -5,7 +5,7 @@ import "./BalanceForward.css"
 // Sum divide goal amount by time
 function BalanceForward(){
     const income = 2000;
-    const expense = 1910;
+    const expense = 2000;
     const target = 100
     const balanceForward = income-expense
     const percent = 100-((balanceForward/target)*100)
@@ -28,7 +28,7 @@ function BalanceForward(){
     }else if(balanceForward<0){
         return (
             <>
-            <div className="balanceforward"><h4 className="p-2 border rounded text-white bg-danger">Balance Forward: {balanceForward}</h4>
+            <div className="balanceforward"><h4 className="p-2 border rounded text-white" style={{"background-color":"#FF3131"}}>Balance Forward: {balanceForward}</h4>
                 <span className="tooltiptext">Your are spending more than your monthly income!</span>
             </div> 
             </>
