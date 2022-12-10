@@ -32,46 +32,46 @@ router.post("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
-  MicroPost.findByPk(id).then((mpost) => {
-    if (!mpost) {
-      return res.sendStatus(404);
-    }
+// router.get("/:id", (req, res) => {
+//   const { id } = req.params;
+//   MicroPost.findByPk(id).then((mpost) => {
+//     if (!mpost) {
+//       return res.sendStatus(404);
+//     }
 
-    res.json(mpost);
-  });
-});
+//     res.json(mpost);
+//   });
+// });
 
-router.put("/:id", (req, res) => {
-  const { id } = req.params;
-  MicroPost.findByPk(id).then((mpost) => {
-    if (!mpost) {
-      return res.sendStatus(404);
-    }
+// router.put("/:id", (req, res) => {
+//   const { id } = req.params;
+//   MicroPost.findByPk(id).then((mpost) => {
+//     if (!mpost) {
+//       return res.sendStatus(404);
+//     }
 
-    mpost.content = req.body.content;
-    mpost
-      .save()
-      .then((updatedPost) => {
-        res.json(updatedPost);
-      })
-      .catch((err) => {
-        res.status(400).json(err);
-      });
-  });
-});
+//     mpost.content = req.body.content;
+//     mpost
+//       .save()
+//       .then((updatedPost) => {
+//         res.json(updatedPost);
+//       })
+//       .catch((err) => {
+//         res.status(400).json(err);
+//       });
+//   });
+// });
 
-router.delete("/:id", (req, res) => {
-  const { id } = req.params;
-  MicroPost.findByPk(id).then((mpost) => {
-    if (!mpost) {
-      return res.sendStatus(404);
-    }
+// router.delete("/:id", (req, res) => {
+//   const { id } = req.params;
+//   MicroPost.findByPk(id).then((mpost) => {
+//     if (!mpost) {
+//       return res.sendStatus(404);
+//     }
 
-    mpost.destroy();
-    res.sendStatus(204);
-  });
-});
+//     mpost.destroy();
+//     res.sendStatus(204);
+//   });
+// });
 
 module.exports = router;

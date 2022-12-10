@@ -12,13 +12,13 @@ function SignUpPage(props) {
             <label for="firstName" className="form-label">
               First Name *
             </label>
-            <input type="text" className="form-control" id="firstName" required></input>
+            <input type="text" className="form-control" id="firstName" required autocomplete="off"></input>
           </div>
           <div className="col-md-6">
             <label for="lastName" className="form-label">
               Last Name *
             </label>
-            <input type="text" className="form-control" id="lastName" required></input>
+            <input type="text" className="form-control" id="lastName" required autocomplete="off"></input>
           </div>
           <div className="col-md-10">
             <label for="emailInfo" className="form-label">
@@ -88,7 +88,7 @@ function SignUpPage(props) {
             <label for="monthlyIncome" className="form-label">
               Monthly Income *
             </label>
-            <input type="number" className="form-control" id="monthlyIncome" required></input>
+            <input type="number" className="form-control" id="monthlyIncome" required autocomplete="off"></input>
           </div>
           <div className="col-md-12">
             <label for="comments" className="form-label">

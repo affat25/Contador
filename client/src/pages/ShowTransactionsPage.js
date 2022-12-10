@@ -5,10 +5,12 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import ErrorAlert from "../components/ErrorAlert";
 import { useParams } from "react-router-dom";
 
-function ShowPostPage() {
+function ShowTransactionsPage() {
   const [transactions, setTransactions] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [rerender, setRerender] = useState(0);
+
   let params = useParams();
 
   useEffect(() => {
@@ -31,7 +33,7 @@ function ShowPostPage() {
     return () => {
       // clean up function
     };
-  }, [params.id]);
+  }, [params.id, rerender]);
 
   if (error) return <ErrorAlert details={"Transaction post with id=" + params.id + " not found"} />;
   if (loading) return <LoadingSpinner />;
@@ -39,7 +41,7 @@ function ShowPostPage() {
   return (
     <>
       <div className="container mt-2 mb-2 float-left">
-        <AddTransaction />
+        <AddTransaction rerenderFN={() => setRerender(rerender + 1)} />
       </div>
       <div className="row justify-content-center">
         {transactions.map((entryData) => (
@@ -50,5 +52,5 @@ function ShowPostPage() {
   );
 }
 
-export default ShowPostPage;
+export default ShowTransactionsPage;
 // ShowTransactionsPage

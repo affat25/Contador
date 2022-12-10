@@ -1,15 +1,56 @@
 import React, { useState } from "react";
-import { Modal, Button, ModalBody, ModalTitle, ModalHeader, Form, ModalFooter, FormCheck, FormGroup, FormControl, Row, Col, Dropdown, DropdownButton } from "react-bootstrap";
+import { Modal, Button, ModalBody, ModalTitle, ModalHeader, Form, ModalFooter, FormCheck, FormGroup, FormControl, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-function AddTransaction() {
+function AddTransaction(props) {
   const [isShow, invokeModal] = useState(false);
-  const [data, collectData] = useState([]);
+  const [itemName, setItemName] = useState("");
+  const [price, setPrice] = useState(0.0);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
   let params = useParams();
 
   const initModal = () => {
     return invokeModal(!isShow);
   };
+
+  const itemNameChange = (event) => {
+    setItemName(event.target.value);
+  };
+
+  const priceChange = (event) => {
+    setPrice(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      let response = await fetch("/api/transaction/", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          itemName: itemName,
+          price: price,
+          MicroPostId: params.id,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        props.rerenderFN();
+      } else {
+        setError(true);
+      }
+    } catch (error) {
+      console.error("Server error while creating a new transaction post", error);
+      setError(true);
+    }
+  };
+
   return (
     <div>
       <Button variant="primary" onClick={initModal}>
@@ -17,13 +58,13 @@ function AddTransaction() {
       </Button>
 
       <Modal show={isShow}>
-        <ModalHeader closeButton onClick={initModal}>
-          <ModalTitle>Enter Transaction Details</ModalTitle>
-        </ModalHeader>
+        <Form onSubmit={handleSubmit}>
+          <ModalHeader closeButton onClick={initModal}>
+            <ModalTitle>Enter Transaction Details</ModalTitle>
+          </ModalHeader>
 
-        <ModalBody>
-          <Form>
-            {/* This should be pre-filled with the category name and immutable*/}
+          <ModalBody>
+            {/* This should be pre-filled with the category name and immutable. Maybe autocomplete="off"*/}
             <FormGroup className="mb-3" controlId="formTransaction">
               <FormControl type="text" placeholder="Category" />
             </FormGroup>
@@ -33,28 +74,29 @@ function AddTransaction() {
 
             {/* itemName */}
             <FormGroup className="mb-3" controlId="formTransaction">
-              <FormControl type="text" placeholder="Item name" />
+              <FormControl type="text" placeholder="Item name" value={itemName} onChange={itemNameChange} autocomplete="off" />
             </FormGroup>
             {/* price */}
             <FormGroup className="mb-3" controlId="formAmount">
-              <FormControl type="number" placeholder="Price" />
+              <FormControl type="number" placeholder="Price" value={price} onChange={priceChange} />
             </FormGroup>
+
             <Row>
               <FormGroup as={Col}>
                 <FormCheck type="checkbox" label="Recurrent" />
               </FormGroup>
             </Row>
-          </Form>
-        </ModalBody>
+          </ModalBody>
 
-        <ModalFooter>
-          <Button variant="secondary" onClick={initModal}>
-            Cancel
-          </Button>
-          <Button variant="success" type="submit" onClick={initModal}>
-            Confirm
-          </Button>
-        </ModalFooter>
+          <ModalFooter>
+            <Button variant="secondary" onClick={initModal}>
+              Cancel
+            </Button>
+            <Button variant="success" type="submit" onClick={initModal}>
+              Confirm
+            </Button>
+          </ModalFooter>
+        </Form>
       </Modal>
     </div>
   );

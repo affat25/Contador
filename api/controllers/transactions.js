@@ -3,27 +3,15 @@ const router = express.Router();
 const db = require("../models");
 const { Transaction } = db;
 
-// This is a simple example for providing basic CRUD routes for
-// a resource/model. It provides the following:
-//    GET    /api/transaction
-//    POST   /api/transaction
-//    GET    /api/transaction/:id
-//    PUT    /api/transaction/:id
-//    DELETE /api/transaction/:id
-//
-// The full URL's for these routes are composed by combining the
-// prefixes used to load the controller files.
-//    /api comes from the file ../app.js
-//    /transaction comes from the file ./transactions.js
+// router.get("/", (req, res) => {
+//   Transaction.findAll({}).then((allPosts) => res.json(allPosts));
+// });
 
-router.get("/", (req, res) => {
-  Transaction.findAll({}).then((allPosts) => res.json(allPosts));
-});
-
+/** Posts to DB */
 router.post("/", (req, res) => {
-  let { content } = req.body;
+  let { itemName, price, MicroPostId } = req.body;
 
-  Transaction.create({ content })
+  Transaction.create({ itemName, price, MicroPostId })
     .then((newPost) => {
       res.status(201).json(newPost);
     })
@@ -32,6 +20,7 @@ router.post("/", (req, res) => {
     });
 });
 
+/** Renders page based on F-key */
 router.get("/:id", (req, res) => {
   const { id } = req.params;
   Transaction.findAll({
@@ -47,35 +36,35 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.put("/:id", (req, res) => {
-  const { id } = req.params;
-  Transaction.findByPk(id).then((mpost) => {
-    if (!mpost) {
-      return res.sendStatus(404);
-    }
+// router.put("/:id", (req, res) => {
+//   const { id } = req.params;
+//   Transaction.findByPk(id).then((mpost) => {
+//     if (!mpost) {
+//       return res.sendStatus(404);
+//     }
 
-    mpost.content = req.body.content;
-    mpost
-      .save()
-      .then((updatedPost) => {
-        res.json(updatedPost);
-      })
-      .catch((err) => {
-        res.status(400).json(err);
-      });
-  });
-});
+//     mpost.content = req.body.content;
+//     mpost
+//       .save()
+//       .then((updatedPost) => {
+//         res.json(updatedPost);
+//       })
+//       .catch((err) => {
+//         res.status(400).json(err);
+//       });
+//   });
+// });
 
-router.delete("/:id", (req, res) => {
-  const { id } = req.params;
-  Transaction.findByPk(id).then((mpost) => {
-    if (!mpost) {
-      return res.sendStatus(404);
-    }
+// router.delete("/:id", (req, res) => {
+//   const { id } = req.params;
+//   Transaction.findByPk(id).then((mpost) => {
+//     if (!mpost) {
+//       return res.sendStatus(404);
+//     }
 
-    mpost.destroy();
-    res.sendStatus(204);
-  });
-});
+//     mpost.destroy();
+//     res.sendStatus(204);
+//   });
+// });
 
 module.exports = router;

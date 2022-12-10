@@ -1,6 +1,7 @@
 /* Add custom CSS here */
 body {
   font-family: "Crimson Text", serif;
+  font-size: 18px;
 }
 
 .aa-orange-bg {
@@ -13,4 +14,9 @@ body {
 
 .aa-about-us {
   font-family: "Dancing Script", cursive;
+  font-size: 20px;
+}
+
+.aa-border-bottom {
+  border-bottom: 3mm ridge #0052ff;
 }
