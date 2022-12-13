@@ -40,7 +40,7 @@ function PostFormPage() {
 
   return (
     <div className="col-10 col-md-8 col-lg-7 container">
-      {error && <ErrorAlert details={"Failed to save the content"} />}
+      {error && <ErrorAlert details={"failed to save the category name"} />}
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <input type="text" placeholder="Create a category" value={content} className="form-control" onChange={handleContentChange} autoFocus />

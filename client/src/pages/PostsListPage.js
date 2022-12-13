@@ -14,8 +14,6 @@ function PostsListPage() {
       setLoading(true);
       try {
         let response = await fetch("/api/micro_posts");
-        // let transaction = await fetch("api/transaction_history");
-        // let sumTotal = await.response.json();
         let allPosts = await response.json();
         setPosts(allPosts);
         setLoading(false);
