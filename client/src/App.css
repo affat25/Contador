@@ -4,11 +4,11 @@ body {
   font-size: 18px;
 }
 
-.aa-orange-bg {
+.aa-nav {
   background-color: #fe802f;
 }
 
-.aa-blue-txt:hover {
+.aa-icon:hover {
   color: #0052ff;
 }
 
@@ -17,6 +17,25 @@ body {
   font-size: 20px;
 }
 
-.aa-border-bottom {
-  border-bottom: 3mm ridge #0052ff;
+.div-pulse:hover {
+  animation: pulse 2s infinite;
+  background-color: #fff;
+  border-radius: 5%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
