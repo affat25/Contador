@@ -33,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Goal.associate = (models) => {
     // associations can be defined here
+    models.Goal.belongsTo(models.Profile);
   };
 
   return Goal;
