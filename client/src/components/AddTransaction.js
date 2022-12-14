@@ -65,9 +65,9 @@ function AddTransaction(props) {
 
           <ModalBody>
             {/* This should be pre-filled with the category name and immutable. Maybe autocomplete="off"*/}
-            <FormGroup className="mb-3" controlId="formTransaction">
+            {/* <FormGroup className="mb-3" controlId="formTransaction">
               <FormControl type="text" placeholder="Category" />
-            </FormGroup>
+            </FormGroup> */}
 
             {/* We need to somehow capture MicroPostId */}
             {/* params.id ?*/}
