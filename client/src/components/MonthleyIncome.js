@@ -1,4 +1,5 @@
 import React from "react";
+import AddCategory from "./AddCategory";
 import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import{faFileInvoiceDollar} from '@fortawesome/free-solid-svg-icons';
 
@@ -17,7 +18,11 @@ function MonthlyIncome(){
                 size="6x"
                 />
           </div>
-          <div className="d-inline text-end p-2">Monthly Income: {Income}</div>
+          <div className="d-inline text-end p-2">Monthly Income: {Income} 
+            <div className="pt-2 mb-3">
+              <AddCategory/> 
+            </div>
+          </div>
         </div>
         <hr></hr>
       </div>

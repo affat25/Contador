@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import PostsListPage from "./pages/PostsListPage";
-import PostFormPage from "./pages/PostFormPage";
 import ShowTransactionsPage from "./pages/ShowTransactionsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import SignUpPage from "./pages/SignUpPage";
@@ -17,11 +16,6 @@ function Navigation(props) {
           Contador
         </Link>
         <ul className="navbar-nav me-auto">
-          <li className="nav-item">
-            <NavLink className="nav-link mx-1" to="/posts/new">
-              Create a category
-            </NavLink>
-          </li>
           <li className="nav-item">
             <NavLink className="nav-link mx-1" to="/about-us">
               About Us
@@ -49,7 +43,6 @@ function App() {
           {" "}
           {/*justify-content-center*/}
           <Routes>
-            <Route path="/posts/new" element={<PostFormPage />} />
             <Route path="/account/:id" element={<ShowTransactionsPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/" element={<PostsListPage />} />

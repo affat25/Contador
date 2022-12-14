@@ -43,9 +43,6 @@ function PostsListPage() {
     <>
     
     <div className="container-fluid text-center">
-      <div className="mb-3 float-end">
-      <AddCategory/> 
-      </div>
       <div className="row justify-content-center">
       <MonthlyIncome/>
         {posts.map((entryData) => (

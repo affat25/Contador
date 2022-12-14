@@ -40,7 +40,7 @@ function ShowTransactionsPage() {
 
   return (
     <>
-      <div className="container mt-2 mb-2 float-left">
+      <div className="btn pull-right mt-2 mb-2">
         <AddTransaction rerenderFN={() => setRerender(rerender + 1)} />
       <div className="row justify-content-center">
         {transactions.map((entryData) => (

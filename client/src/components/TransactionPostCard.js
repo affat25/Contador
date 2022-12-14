@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteTransaction from "./DeleteCategory";
+import DeleteTransaction from "./DeleteTransaction";
 
 function TransactionPostCard({ itemName, price, createdAt, MicroPostId }) {
   return (

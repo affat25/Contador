@@ -56,13 +56,7 @@ function AddTransaction(props) {
 
   return (
     <div>
-      <FontAwesomeIcon
-           icon={faMoneyBillTransfer}
-           onClick={initModal}
-           style={{"color":"green","size":"20px"}}
-           type="button"
-           size="2x"
-           />
+      <Button className="border-dark"variant="light" onClick={initModal}>Add Transaction</Button>
       <Modal show={isShow}>
         <Form onSubmit={handleSubmit}>
           <ModalHeader closeButton onClick={initModal}>

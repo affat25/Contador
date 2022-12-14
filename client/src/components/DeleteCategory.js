@@ -53,7 +53,7 @@ function DeleteTransaction({id}) {
         </ModalHeader>
         <ModalBody>
           <div>
-            Are you sure you want to delete category?
+            Are you sure you want to delete this category?
           </div>
         </ModalBody>
         <ModalFooter>

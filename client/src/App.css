@@ -16,6 +16,10 @@ body {
   font-family: "Dancing Script", cursive;
   font-size: 20px;
 }
+.aa-link{
+  text-decoration:none;
+  color: #000;
+}
 
 .div-pulse:hover {
   animation: pulse 2s infinite;

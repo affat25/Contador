@@ -55,16 +55,16 @@ router.get("/:id", (req, res) => {
 //   });
 // });
 
-// router.delete("/:id", (req, res) => {
-//   const { id } = req.params;
-//   Transaction.findByPk(id).then((mpost) => {
-//     if (!mpost) {
-//       return res.sendStatus(404);
-//     }
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  Transaction.findByPk(id).then((mpost) => {
+    if (!mpost) {
+      return res.sendStatus(404);
+    }
 
-//     mpost.destroy();
-//     res.sendStatus(204);
-//   });
-// });
+    mpost.destroy();
+    res.sendStatus(204);
+  });
+});
 
 module.exports = router;
