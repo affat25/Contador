@@ -66,6 +66,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Profile.associate = (models) => {
     // associations can be defined here
+    models.Profile.belongsTo(models.Login);
   };
 
   return Profile;

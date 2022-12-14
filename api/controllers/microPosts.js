@@ -1,3 +1,5 @@
+const { sumAllTransactions } = require("../util/DBFunctions");
+
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
@@ -16,10 +18,25 @@ const { MicroPost } = db;
 //    /api comes from the file ../app.js
 //    /micro_posts comes from the file ./microPosts.js
 
+// Display content and totalSpent
 router.get("/", (req, res) => {
-  MicroPost.findAll({}).then((allPosts) => res.json(allPosts));
+  MicroPost.findAll({}).then(async (allPosts) => {
+    const map = new Map();
+    let sums = await sumAllTransactions();
+    sums.map((e) => {
+      map.set(e.MicroPostId, e.getDataValue("totalCategorySpend"));
+    });
+
+    allPosts.forEach((e) => {
+      e.setDataValue("totalCategorySpend", map.get(e.id));
+    });
+
+    res.json(allPosts);
+  });
 });
 
+//
+// How we post new content
 router.post("/", (req, res) => {
   let { content } = req.body;
 

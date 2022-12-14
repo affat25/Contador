@@ -34,9 +34,4 @@ Object.keys(db).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.Transaction.belongsTo(db.MicroPost);
-db.MicroPost.belongsTo(db.Profile);
-db.Profile.belongsTo(db.Login);
-db.Goal.belongsTo(db.Profile);
-
 module.exports = db;

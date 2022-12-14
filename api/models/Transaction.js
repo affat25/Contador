@@ -23,11 +23,15 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Transaction",
+      // [
+      //   sequelize.fn("sum", sequelize.col("price")), "totalAssetAmount",
+      //  ]
     }
   );
 
   Transaction.associate = (models) => {
     // associations can be defined here
+    models.Transaction.belongsTo(models.MicroPost);
   };
 
   return Transaction;

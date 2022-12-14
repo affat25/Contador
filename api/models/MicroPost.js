@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 
   MicroPost.associate = (models) => {
     // associations can be defined here
+    models.MicroPost.belongsTo(models.Profile);
   };
 
   return MicroPost;
