@@ -7,8 +7,8 @@ const microPostsController = require("./microPosts.js");
 router.use("/micro_posts", microPostsController);
 
 // This'll be at api/profile
-// const profileController = require("./profiles.js")
-// router.use("/profile", profileController);
+const profileController = require("./profiles.js");
+router.use("/profile", profileController);
 
 // This'll be at api/transaction
 const transactionController = require("./transactions.js");
