@@ -1,6 +1,6 @@
 import React from "react";
 import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import{faMoneyCheck} from '@fortawesome/free-solid-svg-icons';
+import{faFileInvoiceDollar} from '@fortawesome/free-solid-svg-icons';
 
 function MonthlyIncome(){
     
@@ -11,7 +11,7 @@ function MonthlyIncome(){
             <div className="d-flex flex-row justify-content-around card-body align-text-center" style={{"width":"100px"}}>
             <div>
               <FontAwesomeIcon
-                icon={faMoneyCheck}
+                icon={faFileInvoiceDollar}
                 style={{"color":"green"}}
                 type="button"
                 size="6x"
