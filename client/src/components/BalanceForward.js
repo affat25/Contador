@@ -5,7 +5,7 @@ import "./BalanceForward.css"
 // Sum divide goal amount by time
 function BalanceForward(){
     const income = 2000;
-    const expense = 2000;
+    const expense = 1950;
     const target = 100
     const balanceForward = income-expense
     const percent = 100-((balanceForward/target)*100)

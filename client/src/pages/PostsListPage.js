@@ -11,6 +11,7 @@ import BalanceForward from "../components/BalanceForward";
 function PostsListPage() {
   
   const [posts, setPosts] = useState([]);
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -61,19 +62,3 @@ function PostsListPage() {
 }
 
 export default PostsListPage;
-
-/**  From Affat
- *     <>
-      <div>
-        <div className="container mt-3">
-          <AddTransaction />
-        </div>
-
-        <div className="row justify-content-center">
-          {posts.map((entryData) => (
-            <MicroPostCard {...entryData} key={entryData.id} />
-          ))}
-        </div>
-      </div>
-    </>
- */
