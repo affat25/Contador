@@ -4,13 +4,13 @@ import ErrorAlert from "./ErrorAlert";
 import{FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import{faTimes} from '@fortawesome/free-solid-svg-icons'
 
-function DeleteTransaction({id}) {
+function DeleteCategory({id}) {
     const [error, setError] = useState(false);
     const [isShow,invokeModal]= useState(false);
 
     const handleDelete = async (event) => {
       try {
-        let response = await fetch(`/api/transaction/${id}`, {
+        let response = await fetch(`/api/micro_posts/${id}`, {
           method: "DELETE",
           credentials: "include",
           headers: {
@@ -69,4 +69,4 @@ function DeleteTransaction({id}) {
     );
 }
 
-export default DeleteTransaction;
+export default DeleteCategory;

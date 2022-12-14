@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import PostsListPage from "./pages/PostsListPage";
+import PostFormPage from "./pages/PostFormPage";
 import ShowTransactionsPage from "./pages/ShowTransactionsPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import SignUpPage from "./pages/SignUpPage";
@@ -12,7 +13,7 @@ function Navigation(props) {
     // navbar-dark bg-dark
     <nav className="navbar navbar-expand-sm aa-nav navbar-dark shadow mb-5">
       <div className="container-fluid col-10">
-        <Link className="navbar-brand aa-icon" to="/">
+        <Link className="navbar-brand aa-blue-txt " to="/">
           Contador
         </Link>
         <ul className="navbar-nav me-auto">
@@ -48,6 +49,7 @@ function App() {
           {" "}
           {/*justify-content-center*/}
           <Routes>
+            <Route path="/posts/new" element={<PostFormPage />} />
             <Route path="/account/:id" element={<ShowTransactionsPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/" element={<PostsListPage />} />

@@ -42,11 +42,11 @@ function ShowTransactionsPage() {
     <>
       <div className="container mt-2 mb-2 float-left">
         <AddTransaction rerenderFN={() => setRerender(rerender + 1)} />
-      </div>
       <div className="row justify-content-center">
         {transactions.map((entryData) => (
           <TransactionPostCard {...entryData} key={entryData.id} />
         ))}
+      </div>
       </div>
     </>
   );

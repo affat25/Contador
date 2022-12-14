@@ -43,15 +43,15 @@ function PostsListPage() {
     <>
     
     <div className="container-fluid text-center">
-      <div className="mb-3">
+      <div className="mb-3 float-end">
       <AddCategory/> 
       </div>
-      <div className="row justify-content-center" style={{"width":"600px"}}>
+      <div className="row justify-content-center">
       <MonthlyIncome/>
         {posts.map((entryData) => (
           <MicroPostCard {...entryData} key={entryData.id} />
         ))}
-        <div className="d-flex flex-row justify-content-end">
+        <div className="d-flex flex-row justify-content-center">
           <Target/>
           <BalanceForward/>
         </div>
