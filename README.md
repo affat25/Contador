@@ -13,14 +13,14 @@ The sum total of each category will be the total expense and that would be deduc
 For example, the user's target was $100 for the month of November, but they only saved $90. Contador will tell the user "Great Job, you are only 10% away from the monthly goal". The next month, the user has to save $110 to make up for the $10 they could not save previosuly.
 
 
-<img src="images\positive-comment.jpg">
+<img src="images\positive.jpg">
 
 
 
 Now, suppose the user did not save any money in December, Contador will let the user know that they need to make big improvements.
 
 
-<img src="images\positive-comment.jpg">
+<img src="images\negative.jpg">
 
 
 
