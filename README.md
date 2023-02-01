@@ -1,8 +1,8 @@
-# CTP Project Starter
+# Contador
 
-A full stack web application starter template for building projects with React, Express.js, and Sequelize.js
+A full stack web application with React, Express.js, and Sequelize.js. With the rise in infaltion it has been extremely difficult for the general public to save money, especially for us students. The purpos of Contador is to help you build good spending habits and achieve your saving goals.
 
-**Current version:** 2022.2 (Oct 2022)
+**Current version:** 2022.3 (Dec 2022)
 
 ## Stack
 
@@ -24,7 +24,7 @@ _Frontend React client_
 
 ## Development Setup
 
-Each team member will need to do this on their local machine.
+You will need to do this on their local machine.
 
 ### Ensure you have PostgreSQL installed
 
