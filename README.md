@@ -1,9 +1,7 @@
 # Contador
 
 A full stack web application with React, Express.js, and Sequelize.js. With the rise in inflation it has been extremely difficult for the general public to save money, especially for us students. The purpose of Contador is to help you build good spending habits and achieve your saving goals.
-
-![](images\Home.jpg)
-
+<img src="images\Home.jpg">
 The user will add their monthly income and the target amount they want to have after a certain period of time. After that the user will have the option to categories their transactions. For grocery bill for saturday and sunday or gas bills for first and second week of the month.
 
 The sum total of each category will be the total expense and that would be deducted from the monthly expense, giving user their monthly surplus or defecit.
