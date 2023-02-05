@@ -1,6 +1,6 @@
 # Contador
 
-A full stack web application with React, Express.js, and Sequelize.js. With the rise in inflation it has been extremely difficult for the general public to save money, especially for us students. The purpose of Contador is to help you build good spending habits and achieve your saving goals.
+A personal financing web application with React, Express.js, and Sequelize.js. With the rise in inflation it has been extremely difficult for the general public to save money, especially for us students. The purpose of Contador is to help you build good spending habits and achieve your saving goals.
 
 
 <img src="images\Home.jpg">
